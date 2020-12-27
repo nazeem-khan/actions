@@ -6,11 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: npm install
-        uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-      - run: npm install
       - name:  Build :latest
         run: docker build -t nazeem358/first:git .
       - name: docker login
