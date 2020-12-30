@@ -10,7 +10,7 @@ app.post("/webhooks/github", async function (req, res) {
 })
 
 function deploy(res){
-    childProcess.exec('./deploy.sh', function(err, stdout, stderr){
+    childProcess.exec('cd /home/ubuntu && ./deploy.sh', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
