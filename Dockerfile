@@ -9,4 +9,5 @@ RUN cd /app && npm i --only=production
 COPY . .
 
 EXPOSE 3000
-CMD ["sh", "-c", "node app.js"]
+CMD ["sh", "-c"," node app.js"]
+
