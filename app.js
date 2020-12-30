@@ -10,7 +10,7 @@ app.post("/webhooks/github", async function (req, res) {
 })
 
 function deploy(res){
-    exec('ls -la', function(err, stdout, stderr){
+    exec('./deploy.sh', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
