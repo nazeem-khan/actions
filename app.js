@@ -29,7 +29,7 @@ function deploy(res){
 
 
 app.get("/", (req, res) => {
-    res.send("testing....testing");
+    res.send("webhooks testing....");
 })
 
 app.listen(3000, (err) => {
