@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var execFile = require('child_process').execFile;
+var {exec }= require('child_process');
 const delay = require('delay');
 var githubUsername = 'nazeem-khan'
 
@@ -10,7 +10,7 @@ app.post("/webhooks/github", async function (req, res) {
 })
 
 function deploy(res){
-    execFile('ls -la', function(err, stdout, stderr){
+    exec('ls -la', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
