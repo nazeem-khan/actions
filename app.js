@@ -4,11 +4,11 @@ var childProcess = require('child_process');
 var githubUsername = 'nazeem-khan'
 let secret = 'secret';
 
-app.post("/webhooks/github", function (req, res) {
+app.post("/webhooks/github", async function (req, res) {
     var sender = req.body.sender;
     var branch = req.body.ref;
     let gitSecret = req.body.secret;
-
+    await delay(50000)
     if(branch.indexOf('master') > -1 && sender.login === githubUsername && gitSecret == secret){
         deploy(res);
     }
@@ -18,7 +18,7 @@ app.post("/webhooks/github", function (req, res) {
 })
 
 function deploy(res){
-    childProcess.exec('cd /home && ./deploy.sh', function(err, stdout, stderr){
+    childProcess.exec('./deploy.sh', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);

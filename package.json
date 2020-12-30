@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "delay": "^4.4.0",
     "express": "^4.17.1"
   }
 }
