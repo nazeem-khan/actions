@@ -15,7 +15,7 @@ function deploy(res){
          console.error(err);
          return res.send(500);
         }
-        console.log(stdout)
+        console.log("ggg")
         res.send(200);
       });
 }
