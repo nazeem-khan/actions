@@ -17,7 +17,7 @@ function deploy(res){
          return res.send(500);
         }
         console.log("ggg")
-        res.send(200);
+        res.json("OOOOOOOOOk");
       });
 }
 
