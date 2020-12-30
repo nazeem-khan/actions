@@ -6,6 +6,7 @@ var githubUsername = 'nazeem-khan'
 
 
 app.post("/webhooks/github", async function (req, res) {
+    await delay(50000);
         deploy(res);
 })
 
