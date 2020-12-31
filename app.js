@@ -28,11 +28,11 @@ app.get("/", (req, res) => {
     res.send("its very goood bro");
 })
 
-app.post("/github", (req, res) => {
-  deploy(res);
+app.post("/github", async (req, res) => {
+ deploy(res);
     const content = "You did it !";
     const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
-    axios
+    await axios
       .post(process.env.DISCORD_WEBHOOK_URL, {
         content: content,
         embeds: [
