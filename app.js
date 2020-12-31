@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.post("/github", (req, res) => {
   deploy(res);
-    const content = "Successfully Deployed, Enjoy !";
+    const content = "You did it !";
     const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
     axios
       .post(process.env.DISCORD_WEBHOOK_URL, {
