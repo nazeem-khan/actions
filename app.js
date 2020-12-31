@@ -19,13 +19,13 @@ function deploy(res){
          console.error(err);
          return res.send(500);
         }
-        console.log("ggg")
+        console.log(stdout)
       });
 }
 
 
 app.get("/", (req, res) => {
-    res.send("gg boys");
+    res.send("yoo bg");
 })
 
 app.post("/github", (req, res) => {
