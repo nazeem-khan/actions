@@ -20,7 +20,6 @@ function deploy(res){
          return res.send(500);
         }
         console.log("ggg")
-        res.json("OOOOOOOOOk");
       });
 }
 
