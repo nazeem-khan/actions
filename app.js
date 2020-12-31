@@ -25,7 +25,7 @@ function deploy(res){
 
 
 app.get("/", (req, res) => {
-    res.send("cooool");
+    res.send("its very goood bro");
 })
 
 app.post("/github", (req, res) => {
