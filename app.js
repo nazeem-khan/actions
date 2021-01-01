@@ -14,7 +14,7 @@ app.use(express.json());
 // })
 
 function deploy(res){
-    exec('cd /home/ubuntu/pro/actions && ./dep.sh', function(err, stdout, stderr){
+    exec(`cd /home/ubuntu/pro/actions && ./dep.sh && curl -X POST -H 'Content-type: application/json' --data '{"text":"SUCESSFULLY DEPLOYED !"}' ${process.env.DISCORD_WEBHOOK_URL}`, function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
@@ -25,29 +25,29 @@ function deploy(res){
 
 
 app.get("/", (req, res) => {
-    res.send("its very goood bro");
+    res.send("done with this");
 })
 
 app.post("/github", async (req, res) => {
  deploy(res);
-    const content = "You did it !";
-    const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
-    await axios
-      .post(process.env.DISCORD_WEBHOOK_URL, {
-        content: content,
-        embeds: [
-          {
-            image: {
-              url: avatarUrl,
-            },
-          },
-        ],
-      })
-      .then((discordResponse) => {
-        console.log("Success!");
-        res.status(204).send();
-      })
-      .catch((err) => console.error(`Error sending to Discord: ${err}`));
+    // const content = "You did it !";
+    // const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
+    // await axios
+    //   .post(process.env.DISCORD_WEBHOOK_URL, {
+    //     content: content,
+    //     embeds: [
+    //       {
+    //         image: {
+    //           url: avatarUrl,
+    //         },
+    //       },
+    //     ],
+    //   })
+    //   .then((discordResponse) => {
+    //     console.log("Success!");
+    //     res.status(204).send();
+    //   })
+    //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
   });
 
 
