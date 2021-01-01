@@ -19,7 +19,7 @@ app.use(express.json());
 // })
 
 function deploy(res){
-    exec(`cd /home/ubuntu/pro/actions && ./dep.sh && curl -X POST -H 'Content-type: application/json' --data '{"text":"SUCESSFULLY DEPLOYED !"}' ${process.env.DISCORD_WEBHOOK_URL}`, function(err, stdout, stderr){
+    exec('cd /home/ubuntu/pro/actions && ./dep.sh ', function(err, stdout, stderr){
         if (err) {
          console.error(err);
          return res.send(500);
