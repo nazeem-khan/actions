@@ -55,7 +55,7 @@ app.post("/github", async (req, res) => {
     //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
 
     await webhook.send({
-      text: 'Successfully deployed',
+      text: 'Dploy ho gaya bhai',
     });
     res.send(200);
   });
