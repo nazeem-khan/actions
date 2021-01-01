@@ -5,6 +5,11 @@ var {exec }= require('child_process');
 const delay = require('delay');
 var githubUsername = 'nazeem-khan'
 const axios = require("axios").default;
+const { IncomingWebhook } = require('@slack/webhook');
+
+const url = process.env.DISCORD_WEBHOOK_URL;
+
+const webhook = new IncomingWebhook(url);
 
 app.use(express.json());
 
@@ -28,8 +33,8 @@ app.get("/", (req, res) => {
     res.send("done with this");
 })
 
-app.post("/github", async (req, res) => {
- deploy(res);
+app.get("/github", async (req, res) => {
+//  deploy(res);
     // const content = "You did it !";
     // const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
     // await axios
@@ -48,6 +53,10 @@ app.post("/github", async (req, res) => {
     //     res.status(204).send();
     //   })
     //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
+
+    await webhook.send({
+      text: 'Successfully deployed',
+    });
   });
 
 
