@@ -57,6 +57,7 @@ app.get("/github", async (req, res) => {
     await webhook.send({
       text: 'Successfully deployed',
     });
+    res.send(200);
   });
 
 
