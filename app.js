@@ -55,7 +55,6 @@ app.post("/github", async (req, res) => {
     //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
 
     await webhook.send({
-      "text": "Danny Torrence left a 1 star review for your property.",
       "blocks": [
         {
           "type": "section",
@@ -69,7 +68,7 @@ app.post("/github", async (req, res) => {
           "block_id": "section567",
           "text": {
             "type": "mrkdwn",
-            "text": "<https://google.com|Overlook Hotel> \n :star: \n Doors had too many axe holes, guest in room 237 was far too rowdy, whole place felt stuck in the 1920s."
+            "text": "<https://example.com|Overlook Hotel> \n :star: \n Doors had too many axe holes, guest in room 237 was far too rowdy, whole place felt stuck in the 1920s."
           },
           "accessory": {
             "type": "image",
@@ -92,16 +91,16 @@ app.post("/github", async (req, res) => {
           "elements": [
             {
               "type": "button",
-                "text": {
-                    "type": "plain_text",
-                    "text": "Reply to review",
-                    "emoji": false
-                }
+              "text": {
+                "type": "plain_text",
+                "text": "Reply to review",
+                "emoji": false
+              }
             }
           ]
         }
       ]
-  });
+    });
     res.send(200);
   });
 
