@@ -35,73 +35,10 @@ app.get("/", (req, res) => {
 
 app.post("/github", async (req, res) => {
   await deploy(res);
-    // const content = "You did it !";
-    // const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
-    // await axios
-    //   .post(process.env.DISCORD_WEBHOOK_URL, {
-    //     content: content,
-    //     embeds: [
-    //       {
-    //         image: {
-    //           url: avatarUrl,
-    //         },
-    //       },
-    //     ],
-    //   })
-    //   .then((discordResponse) => {
-    //     console.log("Success!");
-    //     res.status(204).send();
-    //   })
-    //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
-
     await webhook.send({
-      "blocks": [
-        {
-          "type": "section",
-          "text": {
-            "type": "mrkdwn",
-            "text": "Danny Torrence left the following review for your property:"
-          }
-        },
-        {
-          "type": "section",
-          "block_id": "section567",
-          "text": {
-            "type": "mrkdwn",
-            "text": "<https://example.com|Overlook Hotel> \n :star: \n Doors had too many axe holes, guest in room 237 was far too rowdy, whole place felt stuck in the 1920s."
-          },
-          "accessory": {
-            "type": "image",
-            "image_url": "https://is5-ssl.mzstatic.com/image/thumb/Purple3/v4/d3/72/5c/d3725c8f-c642-5d69-1904-aa36e4297885/source/256x256bb.jpg",
-            "alt_text": "Haunted hotel image"
-          }
-        },
-        {
-          "type": "section",
-          "block_id": "section789",
-          "fields": [
-            {
-              "type": "mrkdwn",
-              "text": "*Average Rating*\n1.0"
-            }
-          ]
-        },
-        {
-          "type": "actions",
-          "elements": [
-            {
-              "type": "button",
-              "text": {
-                "type": "plain_text",
-                "text": "Reply to review",
-                "emoji": false
-              }
-            }
-          ]
-        }
-      ]
+    "text":"The code has be deployed to cloud successfully !"
     });
-    res.send(200);
+    res.sendStatus(200);
   });
 
 
