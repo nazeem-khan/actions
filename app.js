@@ -69,7 +69,7 @@ app.post("/github", async (req, res) => {
           "block_id": "section567",
           "text": {
             "type": "mrkdwn",
-            "text": "<https://example.com|Overlook Hotel> \n :star: \n Doors had too many axe holes, guest in room 237 was far too rowdy, whole place felt stuck in the 1920s."
+            "text": "<https://google.com|Overlook Hotel> \n :star: \n Doors had too many axe holes, guest in room 237 was far too rowdy, whole place felt stuck in the 1920s."
           },
           "accessory": {
             "type": "image",
