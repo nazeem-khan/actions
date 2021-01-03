@@ -30,7 +30,7 @@ async function deploy(res){
 
 
 app.get("/", (req, res) => {
-    res.send("done with this");
+    res.send("something");
 })
 
 app.post("/github", async (req, res) => {
