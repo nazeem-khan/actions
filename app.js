@@ -18,13 +18,13 @@ app.use(express.json());
 //         deploy(res);
 // })
 
-function deploy(res){
-    exec('cd /home/ubuntu/pro/actions && ./dep.sh ', function(err, stdout, stderr){
+async function deploy(res){
+    exec('cd /home/ubuntu/pro/actions && ./dep.sh ',function(err, stdout, stderr){
         if (err) {
          console.error(err);
-         return res.send(500);
+         return stderr;
         }
-        console.log(stdout)
+         return stdout
       });
 }
 
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/github", async (req, res) => {
-  deploy(res);
+  const print =await deploy(res);
     // const content = "You did it !";
     // const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
     // await axios
@@ -55,7 +55,7 @@ app.post("/github", async (req, res) => {
     //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
 
     await webhook.send({
-      text: 'Its dome',
+      text: `The Code has been deployed , here are the logs - ${print}`,
     });
     res.send(200);
   });
