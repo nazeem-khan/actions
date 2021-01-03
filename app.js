@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/github", async (req, res) => {
-//  deploy(res);
+  deploy(res);
     // const content = "You did it !";
     // const avatarUrl = "https://media.giphy.com/media/SfYTJuxdAbsVW/giphy.gif";
     // await axios
@@ -55,7 +55,7 @@ app.post("/github", async (req, res) => {
     //   .catch((err) => console.error(`Error sending to Discord: ${err}`));
 
     await webhook.send({
-      text: 'Dploy ho gaya bhai',
+      text: 'Done with deploying',
     });
     res.send(200);
   });
