@@ -86,6 +86,19 @@ app.post("/github", async (req, res) => {
               "text": "*Average Rating*\n1.0"
             }
           ]
+        },
+        {
+          "type": "actions",
+          "elements": [
+            {
+              "type": "button",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Reply to review",
+                    "emoji": false
+                }
+            }
+          ]
         }
       ]
   });
